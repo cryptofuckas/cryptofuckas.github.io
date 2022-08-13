@@ -22,79 +22,69 @@ body {
     color: white;
 }
 
-@-webkit-keyframes ticker {
-    0% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-      visibility: visible;
-    }
-  
-    100% {
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
-    }
+.small-logo {
+  display: none;
 }
-  
-  @keyframes ticker {
-    0% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-      visibility: visible;
-    }
-  
-    100% {
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
-    }
-  }
-  
-  .ticker-wrap {
-    
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    overflow-x: hidden;
-    height: 4rem;
-    background-color: rgba(#000, 0.9); 
-    padding-left: 100%;
-    box-sizing: content-box;
-  }
-  
-    .ticker {
-  
-      display: inline-block;
-      height: 4rem;
-      line-height: 4rem;  
-      white-space: nowrap;
-      padding-right: 100%;
-      box-sizing: content-box;
-  
-      -webkit-animation-iteration-count: infinite; 
-              animation-iteration-count: infinite;
-      -webkit-animation-timing-function: linear;
-              animation-timing-function: linear;
-     -webkit-animation-name: ticker;
-             animation-name: ticker;
-      -webkit-animation-duration: 30s;
-              animation-duration: 30s;
-    }
-  
-      .ticker__item {
-        display: inline-block;
-        padding: 0 2rem;   
-  
-    }
 
-    .ticker-logo {
-        font-family: 'Silkscreen', cursive;
-        color: white;
-    }
+@media (max-width: 700px) {
+  .logo-regular {
+    display: none;
+  }
+
+  .small-logo {
+    display: flex;
+  }
+}
 
 .middle {
-    margin-top: 15rem;
+  margin-top: 5rem;
+  padding: 0.5rem;
+  display: flex;
+}
+
+.project-social-link {
+  text-decoration: none;
+  color: white;
+  margin: 0.5rem;
+  transition: all 150ms ease-in-out;
+}
+
+.project-social-link:hover {
+  color: greenyellow;
+}
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+  overflow: hidden; /* HIDE SCROLL BAR */
+  background: black;
+}
+ 
+/* (B) MOVING TICKER WRAPPER */
+.hmove { display: flex; }
+
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem {
+  flex-shrink: 0;
+  width: 75%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+ 
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+@keyframes tickerh {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-2400%, 0, 0); }
+}
+.hmove { animation: tickerh linear 60s infinite; }
+.hmove:hover { animation-play-state: paused; }
+
+.ticker-logo {
+  font-family: 'Silkscreen', cursive;
+  color: white;
 }
 
 .x {
     color: white;
 }
-
