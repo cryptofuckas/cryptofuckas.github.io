@@ -104,6 +104,12 @@ body {
   }
 }
 
+@media (max-width:600px) {
+  .paper-wrapper {
+    margin-left: 50%;
+  }
+}
+
 .whitepaper-link {
   font-family: 'Silkscreen', cursive;
   color: white;
