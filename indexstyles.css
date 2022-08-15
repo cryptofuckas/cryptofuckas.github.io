@@ -85,6 +85,32 @@ body {
   color: white;
 }
 
-.x {
-    color: white;
+.paper-wrapper {
+  width: 25%;
+  margin-left: 75%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width:860px) {
+  .paper-wrapper {
+    margin-left: 65%;
+  }
+}
+
+@media (max-width:660px) {
+  .paper-wrapper {
+    margin-left: 55%;
+  }
+}
+
+.whitepaper-link {
+  font-family: 'Silkscreen', cursive;
+  color: white;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+.whitepaper-link:hover {
+  color: greenyellow;
 }
